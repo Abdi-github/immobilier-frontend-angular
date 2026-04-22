@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+
 jobs:
   checks:
     runs-on: ubuntu-latest
@@ -38,11 +41,21 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            REPO="${{ github.event.repository.name }}"
+            REPO="${{ env.REPO_NAME }}"
             APP_DIR="/opt/apps/$REPO"
+            APP_REPO="git@github.com:${{ github.repository }}.git"
 
             echo "=== Deploying $REPO ==="
+            mkdir -p /opt/apps
+
+            if [ ! -d "$APP_DIR/.git" ]; then
+              echo "First deployment detected — cloning repository..."
+              git clone "$APP_REPO" "$APP_DIR"
+            fi
+
             cd "$APP_DIR"
+            git fetch origin main
+            git checkout main
             git pull origin main
 
             if [ -f compose.prod.yaml ]; then
@@ -56,9 +69,18 @@ jobs:
             echo "Using compose file: $CF"
 
             if docker compose -f "$CF" ps --status running -q 2>/dev/null | grep -q .; then
-              echo "Containers running — rebuilding..."
-              docker compose -f "$CF" up -d --build
-              echo "✓ Rebuild complete"
+              WAS_RUNNING=true
             else
-              echo "Containers not running — code updated, will rebuild on next launch"
+              WAS_RUNNING=false
             fi
+
+            echo "Building and refreshing stack..."
+            docker compose -f "$CF" up -d --build
+
+            if [ "$WAS_RUNNING" = false ]; then
+              echo "Stack was previously stopped — returning it to sleeping state for Sablier"
+              docker compose -f "$CF" stop
+            fi
+
+            docker image prune -f
+            echo "✓ Deploy complete"
