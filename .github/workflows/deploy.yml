@@ -44,6 +44,7 @@ jobs:
             REPO="${{ env.REPO_NAME }}"
             APP_DIR="/opt/apps/$REPO"
             APP_REPO="git@github.com:${{ github.repository }}.git"
+            FIRST_DEPLOY=false
 
             echo "=== Deploying $REPO ==="
             mkdir -p /opt/apps
@@ -51,6 +52,7 @@ jobs:
             if [ ! -d "$APP_DIR/.git" ]; then
               echo "First deployment detected — cloning repository..."
               git clone "$APP_REPO" "$APP_DIR"
+              FIRST_DEPLOY=true
             fi
 
             cd "$APP_DIR"
@@ -77,7 +79,9 @@ jobs:
             echo "Building and refreshing stack..."
             docker compose -f "$CF" up -d --build
 
-            if [ "$WAS_RUNNING" = false ]; then
+            if [ "$FIRST_DEPLOY" = true ]; then
+              echo "First deployment — leaving stack running so Traefik can register the router and issue TLS"
+            elif [ "$WAS_RUNNING" = false ]; then
               echo "Stack was previously stopped — returning it to sleeping state for Sablier"
               docker compose -f "$CF" stop
             fi
