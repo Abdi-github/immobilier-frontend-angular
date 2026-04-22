@@ -70,6 +70,12 @@ jobs:
 
             echo "Using compose file: $CF"
 
+            if docker compose -f "$CF" ps -aq 2>/dev/null | grep -q .; then
+              HAD_STACK=true
+            else
+              HAD_STACK=false
+            fi
+
             if docker compose -f "$CF" ps --status running -q 2>/dev/null | grep -q .; then
               WAS_RUNNING=true
             else
@@ -79,8 +85,8 @@ jobs:
             echo "Building and refreshing stack..."
             docker compose -f "$CF" up -d --build
 
-            if [ "$FIRST_DEPLOY" = true ]; then
-              echo "First deployment — leaving stack running so Traefik can register the router and issue TLS"
+            if [ "$FIRST_DEPLOY" = true ] || [ "$HAD_STACK" = false ]; then
+              echo "First stack bootstrap — leaving stack running so Traefik can register the router and issue TLS"
             elif [ "$WAS_RUNNING" = false ]; then
               echo "Stack was previously stopped — returning it to sleeping state for Sablier"
               docker compose -f "$CF" stop
