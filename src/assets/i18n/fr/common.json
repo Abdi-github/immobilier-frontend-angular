@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "residential": "Résidentiel",
+    "commercial": "Commercial",
+    "properties": "Propriétés",
+    "agencies": "Agences",
+    "about": "À propos",
+    "contact": "Contact",
+    "signIn": "Se connecter",
+    "signOut": "Se déconnecter",
+    "dashboard": "Tableau de bord",
+    "myProperties": "Mes propriétés",
+    "profile": "Mon profil",
+    "favorites": "Recherches sauvegardées",
+    "alerts": "Alertes",
+    "settings": "Paramètres",
+    "login": "Se connecter",
+    "register": "S'inscrire"
+  },
+  "footer": {
+    "tagline": "Trouvez la propriété idéale en Suisse.",
+    "links": "Liens rapides",
+    "legal": "Mentions légales",
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "contact": "Contactez-nous",
+    "copyright": "© {{year}} Immobilier.ch — Tous droits réservés.",
+    "whoAreWe": "Qui sommes-nous?",
+    "newsletter": "Newsletter",
+    "contactUs": "Contact",
+    "usefulLinks": "Liens utiles",
+    "ourListings": "Nos annonces",
+    "buy": "Acheter",
+    "rent": "Louer",
+    "forProfessionals": "Pour les professionnels",
+    "listProperty": "Publier une annonce",
+    "registerAgency": "Inscrire votre agence",
+    "professionals": "Les professionnels",
+    "directory": "Annuaire"
+  },
+  "buttons": {
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "reset": "Réinitialiser",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "submit": "Soumettre",
+    "back": "Retour",
+    "next": "Suivant",
+    "viewAll": "Voir tout",
+    "view": "Voir",
+    "loadMore": "Charger plus",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "upload": "Télécharger"
+  },
+  "units": {
+    "chf": "CHF",
+    "sqm": "m²",
+    "rooms": "pièce",
+    "rooms_plural": "pièces",
+    "perMonth": "/ mois",
+    "month": "/ mois"
+  },
+  "pagination": {
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{current}} sur {{total}}",
+    "showing": "Affichage {{from}}–{{to}} sur {{total}} résultats"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "network": "Erreur réseau. Vérifiez votre connexion.",
+    "notFound": "La page que vous recherchez n'existe pas.",
+    "forbidden": "Vous n'avez pas la permission de voir cela.",
+    "required": "Ce champ est obligatoire.",
+    "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+    "minLength": "Doit contenir au moins {{min}} caractères.",
+    "maxLength": "Ne peut pas dépasser {{max}} caractères."
+  },
+  "status": {
+    "loading": "Chargement...",
+    "noResults": "Aucun résultat trouvé.",
+    "tryAgain": "Réessayer"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano"
+  }
+}

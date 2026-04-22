@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Agenzie immobiliari",
+    "heroTitle": "Trova l'agenzia più adatta a te",
+    "heroHint": "Cerca per città, CAP o cantone per visualizzare le agenzie corrispondenti.",
+    "subtitle": "{{total}} agenzie in Svizzera",
+    "noResults": "Nessuna agenzia trovata.",
+    "emptyTitle": "Cerca agenzie immobiliari",
+    "emptyHint": "Inserisci una città o un cantone nel campo sopra per trovare agenzie immobiliari nella tua zona. Puoi anche cercare per nome dell'agenzia.",
+    "resultsCount": "agenzie trovate",
+    "description": "Trova agenzie immobiliari affidabili in tutta la Svizzera. Tutte le agenzie elencate sono verificate dal nostro team."
+  },
+  "filters": {
+    "search": "Cerca agenzie...",
+    "locationPlaceholder": "Dove? (città, cantone)",
+    "namePlaceholder": "Nome agenzia",
+    "canton": "Filtra per cantone",
+    "allCantons": "Tutti i cantoni",
+    "verified": "Solo verificate"
+  },
+  "search": {
+    "city": "Città",
+    "canton": "Cantone",
+    "noResults": "Nessuna località trovata"
+  },
+  "results": {
+    "titleCanton": "Agenzie immobilier.ch nel cantone di {{name}}",
+    "titleCity": "Agenzie immobilier.ch a {{name}}",
+    "titleSearch": "Risultati per \"{{search}}\"",
+    "titleAll": "Tutte le agenzie",
+    "showing": "Visualizzazione {{from}}-{{to}} di {{total}} agenzie",
+    "noResultsHint": "Prova a modificare i criteri di ricerca.",
+    "clearSearch": "Cancella ricerca"
+  },
+  "card": {
+    "verified": "Verificata",
+    "properties": "{{count}} annuncio",
+    "properties_plural": "{{count}} annunci",
+    "viewProfile": "Vedi profilo agenzia"
+  },
+  "detail": {
+    "breadcrumb": "Agenzie",
+    "verifiedBadge": "Agenzia verificata",
+    "properties": "Proprietà",
+    "allProperties": "Tutti gli annunci di questa agenzia",
+    "contact": "Contatta l'agenzia",
+    "website": "Visita il sito",
+    "phone": "Chiama",
+    "email": "Invia e-mail",
+    "about": "Chi siamo",
+    "address": "Indirizzo",
+    "noProperties": "Nessuna proprietà elencata per questa agenzia."
+  },
+  "seo": {
+    "title": "Agenzie immobiliari — Immobilier",
+    "description": "Scopri agenzie immobiliari affidabili in tutti i cantoni svizzeri."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Immobilienagenturen",
+    "heroTitle": "Finden Sie die passende Agentur",
+    "heroHint": "Suchen Sie nach Stadt, PLZ oder Kanton, um passende Agenturen anzuzeigen.",
+    "subtitle": "{{total}} Agenturen in der Schweiz",
+    "noResults": "Keine Agenturen gefunden.",
+    "emptyTitle": "Immobilienagenturen suchen",
+    "emptyHint": "Geben Sie oben eine Stadt oder einen Kanton ein, um Immobilienagenturen in Ihrer Region zu finden. Sie können auch nach Agenturnamen suchen.",
+    "resultsCount": "Agenturen gefunden",
+    "description": "Finden Sie vertrauenswürdige Immobilienagenturen in der ganzen Schweiz. Alle gelisteten Agenturen werden von unserem Team geprüft."
+  },
+  "filters": {
+    "search": "Agenturen suchen...",
+    "locationPlaceholder": "Wo? (Stadt, Kanton)",
+    "namePlaceholder": "Agenturname",
+    "canton": "Nach Kanton filtern",
+    "allCantons": "Alle Kantone",
+    "verified": "Nur verifizierte"
+  },
+  "search": {
+    "city": "Stadt",
+    "canton": "Kanton",
+    "noResults": "Keine Orte gefunden"
+  },
+  "results": {
+    "titleCanton": "immobilier.ch Agenturen im Kanton {{name}}",
+    "titleCity": "immobilier.ch Agenturen in {{name}}",
+    "titleSearch": "Suchergebnisse für \"{{search}}\"",
+    "titleAll": "Alle Agenturen",
+    "showing": "Anzeige {{from}}-{{to}} von {{total}} Agenturen",
+    "noResultsHint": "Versuchen Sie, Ihre Suchkriterien anzupassen.",
+    "clearSearch": "Suche löschen"
+  },
+  "card": {
+    "verified": "Verifiziert",
+    "properties": "{{count}} Inserat",
+    "properties_plural": "{{count}} Inserate",
+    "viewProfile": "Agenturprofil anzeigen"
+  },
+  "detail": {
+    "breadcrumb": "Agenturen",
+    "verifiedBadge": "Verifizierte Agentur",
+    "properties": "Immobilien",
+    "allProperties": "Alle Inserate dieser Agentur",
+    "contact": "Agentur kontaktieren",
+    "website": "Website besuchen",
+    "phone": "Anrufen",
+    "email": "E-Mail senden",
+    "about": "Über diese Agentur",
+    "address": "Adresse",
+    "noProperties": "Keine Immobilien für diese Agentur aufgelistet."
+  },
+  "seo": {
+    "title": "Immobilienagenturen — Immobilier",
+    "description": "Entdecken Sie vertrauenswürdige Immobilienagenturen in allen Schweizer Kantonen."
+  }
+}

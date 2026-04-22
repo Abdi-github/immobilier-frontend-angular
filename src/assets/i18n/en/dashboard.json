@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "overview": "Overview",
+    "favorites": "Saved Properties",
+    "alerts": "Search Alerts",
+    "myProperties": "My Properties",
+    "addProperty": "Add Property",
+    "inquiries": "Inquiries",
+    "profile": "My Profile",
+    "settings": "Settings"
+  },
+  "overview": {
+    "title": "Dashboard",
+    "welcomeBack": "Welcome back, {{name}}",
+    "greeting": "Welcome back, {{name}}",
+    "quickActions": "Quick Actions",
+    "totalProperties": "Properties",
+    "savedProperties": "Saved",
+    "openInquiries": "Inquiries",
+    "activeAlerts": "Active Alerts",
+    "recentProperties": "Recent Properties",
+    "recentInquiries": "Recent Inquiries"
+  },
+  "favorites": {
+    "title": "Saved Properties",
+    "empty": "You haven't saved any properties yet.",
+    "emptyHint": "Tap the heart icon on any listing to save it here.",
+    "browseProperties": "Browse Properties",
+    "remove": "Remove",
+    "removeConfirm": "Remove this property from your saved list?",
+    "removed": "Property removed from saved list."
+  },
+  "alerts": {
+    "title": "Search Alerts",
+    "description": "Get notified when new properties matching your criteria are published.",
+    "create": "Create Alert",
+    "empty": "No search alerts yet.",
+    "emptyHint": "Create an alert to be notified of new matching properties.",
+    "name": "Alert name",
+    "frequency": "Notification frequency",
+    "frequencyInstant": "Instant",
+    "frequencyDaily": "Daily digest",
+    "frequencyWeekly": "Weekly summary",
+    "pause": "Pause",
+    "activate": "Activate",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this alert?",
+    "criteria": "Alert criteria",
+    "lastSent": "Last sent: {{date}}",
+    "neverSent": "Not sent yet"
+  },
+  "properties": {
+    "title": "My Properties",
+    "add": "Add New Listing",
+    "addNew": "Add New Listing",
+    "titleLabel": "Property Title",
+    "price": "Price (CHF)",
+    "transactionType": "Transaction Type",
+    "category": "Property Category",
+    "surface": "Surface (m\u00b2)",
+    "rooms": "Number of Rooms",
+    "empty": "You haven't listed any properties.",
+    "status": {
+      "DRAFT": "Draft",
+      "PENDING_APPROVAL": "Pending Review",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected",
+      "PUBLISHED": "Published",
+      "ARCHIVED": "Archived"
+    },
+    "publish": "Publish",
+    "archive": "Archive",
+    "editListing": "Edit Listing",
+    "viewPublic": "View Public Page",
+    "deleteListing": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this listing? This cannot be undone."
+  },
+  "inquiries": {
+    "title": "Inquiries",
+    "empty": "No inquiries received yet.",
+    "reply": "Reply",
+    "markRead": "Mark as read",
+    "status": {
+      "new": "New",
+      "contacted": "Contacted",
+      "qualified": "Qualified",
+      "won": "Won",
+      "lost": "Closed"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "language": "Preferred language",
+    "avatar": "Profile photo",
+    "changeAvatar": "Change photo",
+    "save": "Save Changes",
+    "saved": "Profile updated successfully.",
+    "error": "Failed to update profile. Please try again.",
+    "changePassword": "Change Password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "passwordUpdated": "Password updated."
+  }
+}

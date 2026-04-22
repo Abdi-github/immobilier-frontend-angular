@@ -1,0 +1,58 @@
+{
+  "list": {
+    "title": "Real Estate Agencies",
+    "heroTitle": "Find the agency that suits you best",
+    "heroHint": "Search by city, ZIP or canton to display the corresponding agencies.",
+    "subtitle": "{{total}} agencies in Switzerland",
+    "noResults": "No agencies found.",
+    "emptyTitle": "Search for real estate agencies",
+    "emptyHint": "Enter a city or canton name in the search box above to find real estate agencies in your area. You can also search by agency name.",
+    "resultsCount": "agencies found",
+    "description": "Find trusted real estate agencies across Switzerland. All our listed agencies are verified by our team."
+  },
+  "filters": {
+    "search": "Search agencies...",
+    "locationPlaceholder": "Where? (city, canton)",
+    "namePlaceholder": "Agency name",
+    "canton": "Filter by canton",
+    "allCantons": "All cantons",
+    "verified": "Verified only"
+  },
+  "search": {
+    "city": "City",
+    "canton": "Canton",
+    "noResults": "No locations found"
+  },
+  "results": {
+    "titleCanton": "immobilier.ch agencies in {{name}} canton",
+    "titleCity": "immobilier.ch agencies in {{name}}",
+    "titleSearch": "Search results for \"{{search}}\"",
+    "titleAll": "All agencies",
+    "showing": "Showing {{from}}-{{to}} of {{total}} agencies",
+    "noResultsHint": "Try adjusting your search criteria.",
+    "clearSearch": "Clear search"
+  },
+  "card": {
+    "verified": "Verified",
+    "properties": "{{count}} listing",
+    "properties_plural": "{{count}} listings",
+    "viewProfile": "View Agency Profile"
+  },
+  "detail": {
+    "breadcrumb": "Agencies",
+    "verifiedBadge": "Verified Agency",
+    "properties": "Properties",
+    "allProperties": "All properties by this agency",
+    "contact": "Contact Agency",
+    "website": "Visit website",
+    "phone": "Call us",
+    "email": "Send email",
+    "about": "About This Agency",
+    "address": "Address",
+    "noProperties": "No properties listed for this agency."
+  },
+  "seo": {
+    "title": "Real Estate Agencies — Immobilier",
+    "description": "Discover trusted real estate agencies across all Swiss cantons."
+  }
+}

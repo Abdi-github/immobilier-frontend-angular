@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "Find your dream property in Switzerland",
+    "subtitle": "Search thousands of apartments, houses, and commercial spaces to rent or buy.",
+    "tabResidential": "Residential",
+    "tabCommercial": "Commercial",
+    "tabEstimate": "Estimate",
+    "labelRent": "Rent",
+    "labelBuy": "Buy",
+    "placeholderLocation": "City, canton or postal code...",
+    "wherePlaceholder": "Where? (cities, ZIP, districts, cantons)",
+    "cta": "Search Properties"
+  },
+  "services": {
+    "title": "Our services to support you",
+    "estimate": {
+      "title": "Estimate",
+      "subtitle": "your property",
+      "tag": "for free"
+    },
+    "eTenant": {
+      "title": "Apply",
+      "subtitle": "for a rental",
+      "tag": "with e-Tenant"
+    },
+    "findAgency": {
+      "title": "Find",
+      "subtitle": "an agency"
+    }
+  },
+  "cityListings": {
+    "title": "Discover properties by city",
+    "subtitle": "Browse real estate in Switzerland's most popular cities",
+    "toRent": "to rent",
+    "toBuy": "to buy",
+    "seeMore": "See other cities"
+  },
+  "featured": {
+    "title": "Featured Properties",
+    "subtitle": "Hand-picked listings from our most popular areas",
+    "viewAll": "View all properties",
+    "noProperties": "No properties available at the moment."
+  },
+  "cities": {
+    "title": "Explore by City",
+    "subtitle": "Browse properties in Switzerland's most sought-after locations",
+    "properties": "{{count}} properties"
+  },
+  "buyOrRent": {
+    "title": "Buy or Rent?",
+    "subtitle": "Whatever your requirements, you will certainly find what you are looking for on immobilier.ch.",
+    "buyTitle": "Looking to Buy",
+    "buyDesc": "Invest in your future with a property you own. We have hundreds of listings across Switzerland.",
+    "rentTitle": "Looking to Rent",
+    "rentDesc": "Find a flexible rental that suits your lifestyle, from studios to family homes.",
+    "ctaBuy": "Browse Properties for Sale",
+    "ctaRent": "Browse Properties to Rent",
+    "wantToBuy": "I want to buy",
+    "wantToRent": "I want to rent",
+    "lookingForAgency": "I am looking for a real estate agency"
+  },
+  "info": {
+    "title": "We provide you with the keys to a successful real estate experience in Switzerland",
+    "paragraph1": "Buying a house, renting an apartment or investing in real estate can often be complicated. Whatever your real estate project in Switzerland – buying, renting, selling or investing – you can be sure to find all the answers to your needs on immobilier.ch.",
+    "paragraph2": "Your dream home is waiting for you! It will only take a few clicks to find it on immobilier.ch. Enter your criteria, launch the search and straightaway obtain the most relevant results."
+  },
+  "seo": {
+    "title": "Immobilier — Swiss Real Estate Listings",
+    "description": "Search apartments, houses, offices, and more across all Swiss cantons."
+  }
+}

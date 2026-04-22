@@ -1,0 +1,46 @@
+{
+  "about": {
+    "title": "Chi siamo — Immobilier",
+    "subtitle": "La piattaforma immobiliare di fiducia in Svizzera",
+    "mission": "La nostra missione",
+    "missionText": "Mettiamo in contatto chi cerca casa con i migliori annunci e agenzie di tutta la Svizzera. La nostra piattaforma rende la ricerca del prossimo immobile semplice, trasparente ed efficiente.",
+    "body": "<p>Immobilier.ch è la principale piattaforma di ricerca immobiliare in Svizzera. Mettiamo in contatto acquirenti, affittuari e agenzie per rendere il mercato immobiliare semplice e trasparente.</p><h2>La nostra missione</h2><p>Mettiamo in contatto chi cerca casa con i migliori annunci e agenzie di tutta la Svizzera.</p><h2>I nostri valori</h2><ul><li>Trasparenza in ogni annuncio</li><li>Agenzie affidabili e immobili verificati</li><li>Supporto multilingue per tutta la Svizzera</li></ul>",
+    "team": "Il nostro team",
+    "contact": "Contattaci"
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Siamo qui per aiutarti",
+    "name": "Il tuo nome",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "Indirizzo e-mail",
+    "subject": "Oggetto",
+    "message": "Messaggio",
+    "send": "Invia messaggio",
+    "submit": "Invia messaggio",
+    "thankYou": "Grazie per il tuo messaggio. Ti risponderemo entro 24 ore.",
+    "success": "Grazie per il tuo messaggio. Ti risponderemo entro 24 ore.",
+    "error": "Invio non riuscito. Scrivici direttamente.",
+    "address": "Indirizzo",
+    "phone": "Telefono",
+    "hours": "Da lunedì a venerdì, 9:00–18:00"
+  },
+  "terms": {
+    "title": "Termini d'uso",
+    "lastUpdated": "Ultimo aggiornamento: {{date}}",
+    "intro": "Utilizzando Immobilier, accetti questi termini di servizio.",
+    "body": "<p>Questi Termini di Utilizzo regolano l'uso della piattaforma Immobilier. Accedendo ai nostri servizi, accetti di essere vincolato da questi termini.</p><h2>Utilizzo del servizio</h2><p>Puoi utilizzare la piattaforma per cercare e visualizzare annunci immobiliari. Ti impegni a non abusare del servizio.</p><h2>Proprietà intellettuale</h2><p>Tutti i contenuti di questa piattaforma sono di proprietà di Immobilier.ch o dei suoi licenzianti.</p>"
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy",
+    "lastUpdated": "Ultimo aggiornamento: {{date}}",
+    "intro": "La tua privacy è importante per noi. Questa informativa spiega come raccogliamo e utilizziamo i tuoi dati.",
+    "body": "<p>Presso Immobilier.ch, la tua privacy è importante per noi. Questa informativa spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali.</p><h2>Informazioni raccolte</h2><p>Raccogliamo le informazioni che fornisci durante la creazione di un account o l'utilizzo dei nostri servizi.</p><h2>Utilizzo dei tuoi dati</h2><p>Utilizziamo i tuoi dati per fornire i nostri servizi e migliorare la piattaforma. Non vendiamo i tuoi dati personali a terzi.</p>"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "subtitle": "Spiacenti, non riusciamo a trovare quello che cerchi.",
+    "cta": "Torna alla home"
+  }
+}

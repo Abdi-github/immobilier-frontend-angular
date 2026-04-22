@@ -1,0 +1,15 @@
+services:
+  immobilier-frontend-angular:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: immobilier-frontend-angular
+    ports:
+      - "4203:80"
+    restart: unless-stopped
+    networks:
+      - immobilier_network
+
+networks:
+  immobilier_network:
+    external: true

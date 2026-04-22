@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "overview": "Panoramica",
+    "favorites": "Proprietà salvate",
+    "alerts": "Avvisi di ricerca",
+    "myProperties": "Le mie proprietà",
+    "addProperty": "Aggiungi annuncio",
+    "inquiries": "Richieste",
+    "profile": "Il mio profilo",
+    "settings": "Impostazioni"
+  },
+  "overview": {
+    "title": "Dashboard",
+    "welcomeBack": "Bentornato, {{name}}",
+    "greeting": "Bentornato, {{name}}",
+    "quickActions": "Azioni rapide",
+    "totalProperties": "Annunci",
+    "savedProperties": "Salvati",
+    "openInquiries": "Richieste",
+    "activeAlerts": "Avvisi attivi",
+    "recentProperties": "Annunci recenti",
+    "recentInquiries": "Richieste recenti"
+  },
+  "favorites": {
+    "title": "Proprietà salvate",
+    "empty": "Non hai ancora salvato nessuna proprietà.",
+    "emptyHint": "Tocca il cuore su un annuncio per salvarlo qui.",
+    "browseProperties": "Sfoglia le proprietà",
+    "remove": "Rimuovi",
+    "removeConfirm": "Rimuovere questa proprietà dalla tua lista?",
+    "removed": "Proprietà rimossa dai preferiti."
+  },
+  "alerts": {
+    "title": "Avvisi di ricerca",
+    "description": "Ricevi una notifica quando vengono pubblicate nuove proprietà che corrispondono ai tuoi criteri.",
+    "create": "Crea avviso",
+    "empty": "Nessun avviso di ricerca ancora.",
+    "emptyHint": "Crea un avviso per essere informato di nuove proprietà corrispondenti.",
+    "name": "Nome dell'avviso",
+    "frequency": "Frequenza di notifica",
+    "frequencyInstant": "Immediata",
+    "frequencyDaily": "Riepilogo giornaliero",
+    "frequencyWeekly": "Riepilogo settimanale",
+    "pause": "Sospendi",
+    "activate": "Attiva",
+    "delete": "Elimina",
+    "deleteConfirm": "Eliminare questo avviso?",
+    "criteria": "Criteri dell'avviso",
+    "lastSent": "Ultimo invio: {{date}}",
+    "neverSent": "Non ancora inviato"
+  },
+  "properties": {
+    "title": "Le mie proprietà",
+    "add": "Crea nuovo annuncio",
+    "addNew": "Crea nuovo annuncio",
+    "titleLabel": "Titolo dell'immobile",
+    "price": "Prezzo (CHF)",
+    "transactionType": "Tipo di transazione",
+    "category": "Categoria",
+    "surface": "Superficie (m²)",
+    "rooms": "Numero di stanze",
+    "empty": "Non hai ancora inserito annunci.",
+    "status": {
+      "DRAFT": "Bozza",
+      "PENDING_APPROVAL": "In attesa di approvazione",
+      "APPROVED": "Approvato",
+      "REJECTED": "Rifiutato",
+      "PUBLISHED": "Pubblicato",
+      "ARCHIVED": "Archiviato"
+    },
+    "publish": "Pubblica",
+    "archive": "Archivia",
+    "editListing": "Modifica annuncio",
+    "viewPublic": "Vedi pagina pubblica",
+    "deleteListing": "Elimina",
+    "deleteConfirm": "Eliminare definitivamente questo annuncio? L'operazione non è reversibile."
+  },
+  "inquiries": {
+    "title": "Richieste",
+    "empty": "Nessuna richiesta ricevuta.",
+    "reply": "Rispondi",
+    "markRead": "Segna come letto",
+    "status": {
+      "new": "Nuova",
+      "contacted": "Contattato",
+      "qualified": "Qualificato",
+      "won": "Vinto",
+      "lost": "Chiuso"
+    }
+  },
+  "profile": {
+    "title": "Il mio profilo",
+    "firstName": "Nome",
+    "lastName": "Cognome",
+    "email": "E-mail",
+    "phone": "Telefono",
+    "language": "Lingua preferita",
+    "avatar": "Foto profilo",
+    "changeAvatar": "Cambia foto",
+    "save": "Salva modifiche",
+    "saved": "Profilo aggiornato con successo.",
+    "error": "Aggiornamento del profilo non riuscito. Riprova.",
+    "changePassword": "Cambia password",
+    "currentPassword": "Password attuale",
+    "newPassword": "Nuova password",
+    "confirmPassword": "Conferma nuova password",
+    "passwordUpdated": "Password aggiornata."
+  }
+}

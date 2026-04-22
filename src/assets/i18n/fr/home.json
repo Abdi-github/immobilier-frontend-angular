@@ -1,0 +1,71 @@
+{
+  "hero": {
+    "title": "Trouvez la propriété de vos rêves en Suisse",
+    "subtitle": "Parcourez des milliers d'appartements, maisons et locaux commerciaux à louer ou à acheter.",
+    "tabResidential": "Résidentiel",
+    "tabCommercial": "Commercial",
+    "tabEstimate": "Estimer",
+    "labelRent": "Louer",
+    "labelBuy": "Acheter",
+    "placeholderLocation": "Ville, canton ou code postal...",
+    "wherePlaceholder": "Où ? (villes, NPA, quartiers, cantons)",
+    "cta": "Rechercher des propriétés"
+  },
+  "services": {
+    "title": "Nos services pour vous accompagner",
+    "estimate": {
+      "title": "Estimer",
+      "subtitle": "votre bien",
+      "tag": "gratuitement"
+    },
+    "eTenant": {
+      "title": "Postuler",
+      "subtitle": "pour une location",
+      "tag": "avec e-Tenant"
+    },
+    "findAgency": {
+      "title": "Trouver",
+      "subtitle": "une agence"
+    }
+  },
+  "cityListings": {
+    "title": "Découvrir les biens par ville",
+    "subtitle": "Parcourez l'immobilier dans les villes les plus populaires de Suisse",
+    "toRent": "à louer",
+    "toBuy": "à vendre",
+    "seeMore": "Voir d'autres villes"
+  },
+  "featured": {
+    "title": "Propriétés en vedette",
+    "subtitle": "Sélection de nos annonces les plus populaires",
+    "viewAll": "Voir toutes les annonces",
+    "noProperties": "Aucun bien disponible pour le moment."
+  },
+  "cities": {
+    "title": "Explorer par ville",
+    "subtitle": "Consultez les annonces dans les zones les plus prisées de Suisse",
+    "properties": "{{count}} propriétés"
+  },
+  "buyOrRent": {
+    "title": "Acheter ou louer ?",
+    "subtitle": "Quelles que soient vos exigences, vous trouverez certainement ce que vous cherchez sur immobilier.ch.",
+    "buyTitle": "Vous souhaitez acheter",
+    "buyDesc": "Investissez dans votre avenir avec un bien qui vous appartient. Des centaines d'annonces partout en Suisse.",
+    "rentTitle": "Vous souhaitez louer",
+    "rentDesc": "Trouvez une location flexible adaptée à votre mode de vie, du studio à la maison familiale.",
+    "ctaBuy": "Voir les biens à vendre",
+    "ctaRent": "Voir les biens à louer",
+    "wantToBuy": "Je veux acheter",
+    "wantToRent": "Je veux louer",
+    "lookingForAgency": "Je cherche une agence immobilière"
+  },
+  "info": {
+    "title": "Nous vous donnons les clés d'une expérience immobilière réussie en Suisse",
+    "paragraph1": "Acheter une maison, louer un appartement ou investir dans l'immobilier peut souvent être compliqué. Quel que soit votre projet immobilier en Suisse – achat, location, vente ou investissement – vous trouverez toutes les réponses à vos besoins sur immobilier.ch.",
+    "paragraph2": "La maison de vos rêves vous attend ! Il vous suffira de quelques clics pour la trouver sur immobilier.ch. Entrez vos critères, lancez la recherche et obtenez immédiatement les résultats les plus pertinents."
+  },
+  "seo": {
+    "title": "Immobilier — Annonces immobilières en Suisse",
+    "description": "Recherchez appartements, maisons, bureaux et plus dans tous les cantons suisses."
+  }
+}

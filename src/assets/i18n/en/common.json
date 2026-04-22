@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Home",
+    "residential": "Residential",
+    "commercial": "Commercial",
+    "properties": "Properties",
+    "agencies": "Agencies",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "dashboard": "Dashboard",
+    "myProperties": "My Properties",
+    "profile": "My Profile",
+    "favorites": "Saved searches",
+    "alerts": "Alerts",
+    "settings": "Settings",
+    "login": "Log in",
+    "register": "Register"
+  },
+  "footer": {
+    "tagline": "Find your ideal property in Switzerland.",
+    "links": "Quick Links",
+    "legal": "Legal",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "contact": "Get in touch with us",
+    "contactUs": "Contact Us",
+    "usefulLinks": "Useful links",
+    "copyright": "© {{year}} Immobilier.ch — All rights reserved.",
+    "whoAreWe": "Who are we?",
+    "newsletter": "Newsletter",
+    "ourListings": "Our listings",
+    "buy": "Buy",
+    "rent": "Rent",
+    "forProfessionals": "For Professionals",
+    "listProperty": "List your property",
+    "registerAgency": "Register your agency",
+    "professionals": "The professionals",
+    "directory": "Directory"
+  },
+  "buttons": {
+    "search": "Search",
+    "filter": "Filter",
+    "reset": "Reset",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "viewAll": "View All",
+    "view": "View",
+    "loadMore": "Load More",
+    "close": "Close",
+    "confirm": "Confirm",
+    "upload": "Upload"
+  },
+  "units": {
+    "chf": "CHF",
+    "sqm": "m²",
+    "rooms": "room",
+    "rooms_plural": "rooms",
+    "perMonth": "/ month",
+    "month": "month"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {{current}} of {{total}}",
+    "showing": "Showing {{from}}–{{to}} of {{total}} results"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "Network error. Please check your connection.",
+    "notFound": "The page you're looking for doesn't exist.",
+    "forbidden": "You don't have permission to view this.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address.",
+    "minLength": "Must be at least {{min}} characters.",
+    "maxLength": "Cannot exceed {{max}} characters."
+  },
+  "status": {
+    "loading": "Loading...",
+    "noResults": "No results found.",
+    "tryAgain": "Try again"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano"
+  }
+}

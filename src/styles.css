@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@source "./app";
+@source "./index.html";
+
+/* ─────────────────────────────────────────────────────────────
+   Design tokens — kept in sync with immobilier-frontend-react
+   Primary brand colour is the Swiss red/rose used throughout.
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  /* Brand */
+  --color-primary: #c0392b;
+  --color-primary-hover: #a93226;
+  --color-primary-foreground: #ffffff;
+
+  /* Neutral */
+  --color-secondary: #2c3e50;
+  --color-secondary-foreground: #ffffff;
+  --color-accent: #f4f6f8;
+  --color-accent-foreground: #2c3e50;
+
+  /* Layout */
+  --color-background: #ffffff;
+  --color-foreground: #1a1a2e;
+  --color-muted: #f4f6f8;
+  --color-muted-foreground: #64748b;
+
+  /* Form / borders */
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #c0392b;
+
+  /* Semantic */
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #2980b9;
+  --color-destructive: #e74c3c;
+  --color-destructive-foreground: #ffffff;
+
+  /* Cards / overlays */
+  --color-card: #ffffff;
+  --color-card-foreground: #1a1a2e;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a1a2e;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 0.08);
+}
+
+/* ── Base layer ──────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ── Leaflet map overrides ───────────────────────────────────── */
+/* The default leaflet.css gets loaded dynamically; this ensures the
+   map container always has a defined height */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+/* ── Angular Material overrides ──────────────────────────────── */
+/* Mat form fields — use our brand colour for the focused state */
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-focus-overlay {
+  opacity: 0.04;
+}
+
+/* Ensure material dialogs sit above leaflet map tiles */
+.cdk-overlay-container {
+  z-index: 9999;
+}
+
+.cdk-global-overlay-wrapper,
+.cdk-overlay-pane {
+  z-index: 10000;
+}
+
+.header-menu-panel.mat-mdc-menu-panel {
+  margin-top: 0.4rem;
+  border: 1px solid rgb(226 232 240 / 0.95);
+  box-shadow: 0 18px 40px rgb(15 23 42 / 0.16), 0 6px 14px rgb(15 23 42 / 0.08);
+  background-color: #fff;
+}
+
+.property-toolbar-field {
+  --mat-form-field-container-height: 42px;
+  --mat-form-field-container-vertical-padding: 8px;
+}
+
+.property-toolbar-field .mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}
+
+.property-toolbar-field .mat-mdc-text-field-wrapper {
+  border-radius: 0.85rem;
+  background-color: #fff;
+}
+
+.property-toolbar-field .mat-mdc-form-field-infix {
+  min-height: 42px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.property-toolbar-field .mat-mdc-select-value,
+.property-toolbar-field .mat-mdc-floating-label {
+  font-size: 0.875rem;
+}
+
+.property-toolbar-field--sort {
+  --mat-form-field-container-height: 38px;
+  --mat-form-field-container-vertical-padding: 6px;
+}
+
+.property-toolbar-field--sort .mat-mdc-form-field-infix {
+  min-height: 38px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}

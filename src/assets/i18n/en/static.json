@@ -1,0 +1,46 @@
+{
+  "about": {
+    "title": "About Immobilier",
+    "subtitle": "Switzerland's trusted real estate platform",
+    "mission": "Our Mission",
+    "missionText": "We connect property seekers with the best listings and agencies across Switzerland. Our platform makes finding your next home simple, transparent, and efficient.",
+    "body": "<p>Immobilier.ch is Switzerland's leading property search platform. We connect buyers, renters, and agencies to make real estate simple and transparent.</p><h2>Our Mission</h2><p>We connect property seekers with the best listings and agencies across Switzerland. Our platform makes finding your next home simple, transparent, and efficient.</p><h2>Our Values</h2><ul><li>Transparency in every listing</li><li>Trusted agencies and verified properties</li><li>Multilingual support for all of Switzerland</li></ul>",
+    "team": "Our Team",
+    "contact": "Get In Touch"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to help",
+    "name": "Your name",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "submit": "Send Message",
+    "thankYou": "Thank you for your message. We'll get back to you within 24 hours.",
+    "success": "Thank you for your message. We'll get back to you within 24 hours.",
+    "error": "Failed to send. Please email us directly.",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Monday to Friday, 9:00–18:00"
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: {{date}}",
+    "intro": "By using Immobilier, you agree to these terms of service.",
+    "body": "<p>These Terms of Use govern your use of the Immobilier platform. By accessing or using our services, you agree to be bound by these terms.</p><h2>Use of Service</h2><p>You may use the platform to search, view, and inquire about property listings. You agree not to misuse the service or access it using automated means without our permission.</p><h2>Intellectual Property</h2><p>All content on this platform is the property of Immobilier.ch or its licensors. You may not reproduce or distribute any content without permission.</p>"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "intro": "Your privacy matters to us. This policy explains how we collect and use your data.",
+    "body": "<p>At Immobilier.ch, your privacy is important to us. This policy explains how we collect, use, and protect your personal information.</p><h2>Information We Collect</h2><p>We collect information you provide when creating an account, submitting inquiries, or using our services, including name, email, and usage data.</p><h2>How We Use Your Data</h2><p>We use your data to provide our services, improve the platform, and send relevant notifications. We do not sell your personal data to third parties.</p>"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "subtitle": "Sorry, we couldn't find what you were looking for.",
+    "cta": "Go Back Home"
+  }
+}

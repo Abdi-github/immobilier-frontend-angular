@@ -1,0 +1,46 @@
+{
+  "about": {
+    "title": "À propos d'Immobilier",
+    "subtitle": "La plateforme immobilière de confiance en Suisse",
+    "mission": "Notre mission",
+    "missionText": "Nous mettons en relation les acheteurs et locataires avec les meilleures annonces et agences de toute la Suisse. Notre plateforme rend la recherche de votre prochain logement simple, transparente et efficace.",
+    "body": "<p>Immobilier.ch est la principale plateforme de recherche immobilière en Suisse. Nous mettons en relation acheteurs, locataires et agences pour simplifier et rendre transparent le marché immobilier.</p><h2>Notre mission</h2><p>Nous connectons les personnes en quête d'un bien immobilier avec les meilleures annonces et agences de toute la Suisse.</p><h2>Nos valeurs</h2><ul><li>Transparence dans chaque annonce</li><li>Agences de confiance et biens vérifiés</li><li>Assistance multilingue pour toute la Suisse</li></ul>",
+    "team": "Notre équipe",
+    "contact": "Nous contacter"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour vous aider",
+    "name": "Votre nom",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Adresse e-mail",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le message",
+    "submit": "Envoyer le message",
+    "thankYou": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
+    "success": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
+    "error": "Échec de l'envoi. Veuillez nous écrire directement.",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "hours": "Lundi au vendredi, 9h00–18h00"
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "intro": "En utilisant Immobilier, vous acceptez ces conditions d'utilisation.",
+    "body": "<p>Ces conditions régissent votre utilisation de la plateforme Immobilier. En accédant à nos services, vous acceptez d'être lié par ces conditions.</p><h2>Utilisation du service</h2><p>Vous pouvez utiliser la plateforme pour rechercher et consulter des annonces immobilières. Vous vous engagez à ne pas utiliser le service de manière abusive.</p><h2>Propriété intellectuelle</h2><p>Tout le contenu de cette plateforme appartient à Immobilier.ch ou à ses concédants de licence.</p>"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "lastUpdated": "Dernière mise à jour : {{date}}",
+    "intro": "Votre confidentialité est importante pour nous. Cette politique explique comment nous collectons et utilisons vos données.",
+    "body": "<p>Chez Immobilier.ch, votre confidentialité est primordiale. Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles.</p><h2>Informations collectées</h2><p>Nous collectons les informations que vous fournissez lors de la création d'un compte ou de l'utilisation de nos services.</p><h2>Utilisation de vos données</h2><p>Nous utilisons vos données pour fournir nos services et améliorer la plateforme. Nous ne vendons pas vos données personnelles à des tiers.</p>"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "subtitle": "Désolé, nous n'avons pas trouvé ce que vous cherchiez.",
+    "cta": "Retour à l'accueil"
+  }
+}

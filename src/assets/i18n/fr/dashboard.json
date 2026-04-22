@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "overview": "Vue d'ensemble",
+    "favorites": "Propriétés sauvegardées",
+    "alerts": "Alertes de recherche",
+    "myProperties": "Mes propriétés",
+    "addProperty": "Ajouter un bien",
+    "inquiries": "Demandes",
+    "profile": "Mon profil",
+    "settings": "Paramètres"
+  },
+  "overview": {
+    "title": "Tableau de bord",
+    "welcomeBack": "Bon retour, {{name}}",
+    "greeting": "Bon retour, {{name}}",
+    "quickActions": "Actions rapides",
+    "totalProperties": "Propriétés",
+    "savedProperties": "Favoris",
+    "openInquiries": "Demandes",
+    "activeAlerts": "Alertes actives",
+    "recentProperties": "Propriétés récentes",
+    "recentInquiries": "Demandes récentes"
+  },
+  "favorites": {
+    "title": "Propriétés sauvegardées",
+    "empty": "Vous n'avez pas encore sauvegardé de propriétés.",
+    "emptyHint": "Appuyez sur le cœur sur une annonce pour la sauvegarder ici.",
+    "browseProperties": "Parcourir les propriétés",
+    "remove": "Retirer",
+    "removeConfirm": "Retirer cette propriété de votre liste ?",
+    "removed": "Propriété retirée des favoris."
+  },
+  "alerts": {
+    "title": "Alertes de recherche",
+    "description": "Soyez notifié lorsque de nouvelles propriétés correspondant à vos critères sont publiées.",
+    "create": "Créer une alerte",
+    "empty": "Aucune alerte de recherche pour l'instant.",
+    "emptyHint": "Créez une alerte pour être notifié des nouvelles propriétés correspondantes.",
+    "name": "Nom de l'alerte",
+    "frequency": "Fréquence de notification",
+    "frequencyInstant": "Instantanée",
+    "frequencyDaily": "Résumé quotidien",
+    "frequencyWeekly": "Résumé hebdomadaire",
+    "pause": "Suspendre",
+    "activate": "Activer",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette alerte ?",
+    "criteria": "Critères de l'alerte",
+    "lastSent": "Dernier envoi : {{date}}",
+    "neverSent": "Pas encore envoyée"
+  },
+  "properties": {
+    "title": "Mes propriétés",
+    "add": "Ajouter une annonce",
+    "addNew": "Ajouter une annonce",
+    "titleLabel": "Titre de l'annonce",
+    "price": "Prix (CHF)",
+    "transactionType": "Type de transaction",
+    "category": "Catégorie",
+    "surface": "Surface (m²)",
+    "rooms": "Nombre de pièces",
+    "empty": "Vous n'avez pas encore d'annonces.",
+    "status": {
+      "DRAFT": "Brouillon",
+      "PENDING_APPROVAL": "En attente de validation",
+      "APPROVED": "Approuvé",
+      "REJECTED": "Refusé",
+      "PUBLISHED": "Publié",
+      "ARCHIVED": "Archivé"
+    },
+    "publish": "Publier",
+    "archive": "Archiver",
+    "editListing": "Modifier l'annonce",
+    "viewPublic": "Voir la page publique",
+    "deleteListing": "Supprimer",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette annonce ? Cette action est irréversible."
+  },
+  "inquiries": {
+    "title": "Demandes",
+    "empty": "Aucune demande reçue pour l'instant.",
+    "reply": "Répondre",
+    "markRead": "Marquer comme lu",
+    "status": {
+      "new": "Nouveau",
+      "contacted": "Contacté",
+      "qualified": "Qualifié",
+      "won": "Gagné",
+      "lost": "Fermé"
+    }
+  },
+  "profile": {
+    "title": "Mon profil",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "language": "Langue préférée",
+    "avatar": "Photo de profil",
+    "changeAvatar": "Changer la photo",
+    "save": "Enregistrer les modifications",
+    "saved": "Profil mis à jour avec succès.",
+    "error": "Échec de la mise à jour du profil. Veuillez réessayer.",
+    "changePassword": "Changer le mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmer le nouveau mot de passe",
+    "passwordUpdated": "Mot de passe mis à jour."
+  }
+}

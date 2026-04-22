@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "residential": "Wohnimmobilien",
+    "commercial": "Gewerbeimmobilien",
+    "properties": "Immobilien",
+    "agencies": "Agenturen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "signIn": "Anmelden",
+    "signOut": "Abmelden",
+    "dashboard": "Dashboard",
+    "myProperties": "Meine Immobilien",
+    "profile": "Mein Profil",
+    "favorites": "Gespeicherte Suchen",
+    "alerts": "Benachrichtigungen",
+    "settings": "Einstellungen",
+    "login": "Anmelden",
+    "register": "Registrieren"
+  },
+  "footer": {
+    "tagline": "Finden Sie Ihre Traumimmobilie in der Schweiz.",
+    "links": "Schnelllinks",
+    "legal": "Rechtliches",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutz",
+    "contact": "Kontakt",
+    "copyright": "© {{year}} Immobilier.ch — Alle Rechte vorbehalten.",
+    "whoAreWe": "Wer sind wir?",
+    "newsletter": "Newsletter",
+    "contactUs": "Kontakt",
+    "usefulLinks": "Nützliche Links",
+    "ourListings": "Unsere Angebote",
+    "buy": "Kaufen",
+    "rent": "Mieten",
+    "forProfessionals": "Für Profis",
+    "listProperty": "Objekt inserieren",
+    "registerAgency": "Agentur registrieren",
+    "professionals": "Die Profis",
+    "directory": "Verzeichnis"
+  },
+  "buttons": {
+    "search": "Suchen",
+    "filter": "Filtern",
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "submit": "Absenden",
+    "back": "Zurück",
+    "next": "Weiter",
+    "viewAll": "Alle anzeigen",
+    "view": "Anzeigen",
+    "loadMore": "Mehr laden",
+    "close": "Schließen",
+    "confirm": "Bestätigen",
+    "upload": "Hochladen"
+  },
+  "units": {
+    "chf": "CHF",
+    "sqm": "m²",
+    "rooms": "Zimmer",
+    "rooms_plural": "Zimmer",
+    "perMonth": "/ Monat",
+    "month": "/ Monat"
+  },
+  "pagination": {
+    "previous": "Zurück",
+    "next": "Weiter",
+    "page": "Seite {{current}} von {{total}}",
+    "showing": "{{from}}–{{to}} von {{total}} Ergebnissen"
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "network": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
+    "notFound": "Die gesuchte Seite existiert nicht.",
+    "forbidden": "Sie haben keine Berechtigung, dies anzuzeigen.",
+    "required": "Dieses Feld ist erforderlich.",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "minLength": "Muss mindestens {{min}} Zeichen lang sein.",
+    "maxLength": "Darf nicht mehr als {{max}} Zeichen enthalten."
+  },
+  "status": {
+    "loading": "Wird geladen...",
+    "noResults": "Keine Ergebnisse gefunden.",
+    "tryAgain": "Erneut versuchen"
+  },
+  "language": {
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano"
+  }
+}

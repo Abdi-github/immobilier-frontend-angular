@@ -1,0 +1,40 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: immobilier_frontend_angular_prod
+    restart: no
+    expose:
+      - "80"
+    environment:
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.allownonrunning=true"
+      - "traefik.http.routers.immobilier-angular.rule=Host(`immobilier-angular.swiftapp.ch`)"
+      - "traefik.http.routers.immobilier-angular.entrypoints=websecure"
+      - "traefik.http.routers.immobilier-angular.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.immobilier-angular.middlewares=sablier-immobilier@file"
+      - "traefik.http.services.immobilier-angular.loadbalancer.server.port=80"
+      - "sablier.enable=true"
+      - "sablier.group=immobilier"
+    networks:
+      - immobilier_network
+      - traefik
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+networks:
+  immobilier_network:
+    external: true
+  traefik:
+    external: true

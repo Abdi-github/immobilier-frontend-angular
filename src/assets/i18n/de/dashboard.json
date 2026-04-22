@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "overview": "Übersicht",
+    "favorites": "Gespeicherte Objekte",
+    "alerts": "Suchalarme",
+    "myProperties": "Meine Immobilien",
+    "addProperty": "Inserat erstellen",
+    "inquiries": "Anfragen",
+    "profile": "Mein Profil",
+    "settings": "Einstellungen"
+  },
+  "overview": {
+    "title": "Dashboard",
+    "welcomeBack": "Willkommen zurück, {{name}}",
+    "greeting": "Willkommen zurück, {{name}}",
+    "quickActions": "Schnellaktionen",
+    "totalProperties": "Inserate",
+    "savedProperties": "Gespeichert",
+    "openInquiries": "Anfragen",
+    "activeAlerts": "Aktive Alarme",
+    "recentProperties": "Neueste Inserate",
+    "recentInquiries": "Neueste Anfragen"
+  },
+  "favorites": {
+    "title": "Gespeicherte Objekte",
+    "empty": "Noch keine Objekte gespeichert.",
+    "emptyHint": "Klicken Sie auf das Herz-Symbol bei einem Inserat, um es hier zu speichern.",
+    "browseProperties": "Inserate durchsuchen",
+    "remove": "Entfernen",
+    "removeConfirm": "Dieses Objekt aus Ihrer Liste entfernen?",
+    "removed": "Objekt aus Favoriten entfernt."
+  },
+  "alerts": {
+    "title": "Suchalarme",
+    "description": "Werden Sie benachrichtigt, wenn neue Objekte Ihren Kriterien entsprechen.",
+    "create": "Alarm erstellen",
+    "empty": "Noch keine Suchalarme.",
+    "emptyHint": "Erstellen Sie einen Alarm, um über neue passende Objekte informiert zu werden.",
+    "name": "Name des Alarms",
+    "frequency": "Benachrichtigungsfrequenz",
+    "frequencyInstant": "Sofort",
+    "frequencyDaily": "Tägliche Zusammenfassung",
+    "frequencyWeekly": "Wöchentliche Zusammenfassung",
+    "pause": "Pausieren",
+    "activate": "Aktivieren",
+    "delete": "Löschen",
+    "deleteConfirm": "Diesen Alarm löschen?",
+    "criteria": "Alarmkriterien",
+    "lastSent": "Zuletzt gesendet: {{date}}",
+    "neverSent": "Noch nicht gesendet"
+  },
+  "properties": {
+    "title": "Meine Immobilien",
+    "add": "Neues Inserat erstellen",
+    "addNew": "Neues Inserat erstellen",
+    "titleLabel": "Titel der Immobilie",
+    "price": "Preis (CHF)",
+    "transactionType": "Transaktionstyp",
+    "category": "Kategorie",
+    "surface": "Fläche (m²)",
+    "rooms": "Anzahl Zimmer",
+    "empty": "Noch keine Inserate vorhanden.",
+    "status": {
+      "DRAFT": "Entwurf",
+      "PENDING_APPROVAL": "Wartet auf Prüfung",
+      "APPROVED": "Genehmigt",
+      "REJECTED": "Abgelehnt",
+      "PUBLISHED": "Veröffentlicht",
+      "ARCHIVED": "Archiviert"
+    },
+    "publish": "Veröffentlichen",
+    "archive": "Archivieren",
+    "editListing": "Inserat bearbeiten",
+    "viewPublic": "Öffentliche Seite anzeigen",
+    "deleteListing": "Löschen",
+    "deleteConfirm": "Dieses Inserat wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden."
+  },
+  "inquiries": {
+    "title": "Anfragen",
+    "empty": "Noch keine Anfragen erhalten.",
+    "reply": "Antworten",
+    "markRead": "Als gelesen markieren",
+    "status": {
+      "new": "Neu",
+      "contacted": "Kontaktiert",
+      "qualified": "Qualifiziert",
+      "won": "Gewonnen",
+      "lost": "Geschlossen"
+    }
+  },
+  "profile": {
+    "title": "Mein Profil",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "language": "Bevorzugte Sprache",
+    "avatar": "Profilbild",
+    "changeAvatar": "Bild ändern",
+    "save": "Änderungen speichern",
+    "saved": "Profil erfolgreich aktualisiert.",
+    "error": "Profil konnte nicht aktualisiert werden. Bitte erneut versuchen.",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Neues Passwort bestätigen",
+    "passwordUpdated": "Passwort aktualisiert."
+  }
+}
