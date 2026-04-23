@@ -34,6 +34,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync project files to VPS
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -e
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$VPS_HOST" >> ~/.ssh/known_hosts
+
+          rsync -az --delete \
+            --exclude='.git' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            --exclude='.angular' \
+            --exclude='playwright-report' \
+            --exclude='test-results' \
+            ./ "$VPS_USER@$VPS_HOST:/opt/apps/${{ env.REPO_NAME }}/"
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
         with:
@@ -41,24 +64,13 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -e
             REPO="${{ env.REPO_NAME }}"
             APP_DIR="/opt/apps/$REPO"
-            APP_REPO="git@github.com:${{ github.repository }}.git"
-            FIRST_DEPLOY=false
 
             echo "=== Deploying $REPO ==="
-            mkdir -p /opt/apps
-
-            if [ ! -d "$APP_DIR/.git" ]; then
-              echo "First deployment detected — cloning repository..."
-              git clone "$APP_REPO" "$APP_DIR"
-              FIRST_DEPLOY=true
-            fi
-
+            mkdir -p "$APP_DIR"
             cd "$APP_DIR"
-            git fetch origin main
-            git checkout main
-            git pull origin main
 
             if [ -f compose.prod.yaml ]; then
               CF="compose.prod.yaml"
@@ -70,27 +82,11 @@ jobs:
 
             echo "Using compose file: $CF"
 
-            if docker compose -f "$CF" ps -aq 2>/dev/null | grep -q .; then
-              HAD_STACK=true
-            else
-              HAD_STACK=false
-            fi
-
-            if docker compose -f "$CF" ps --status running -q 2>/dev/null | grep -q .; then
-              WAS_RUNNING=true
-            else
-              WAS_RUNNING=false
-            fi
-
             echo "Building and refreshing stack..."
             docker compose -f "$CF" up -d --build
 
-            if [ "$FIRST_DEPLOY" = true ] || [ "$HAD_STACK" = false ]; then
-              echo "First stack bootstrap — leaving stack running so Traefik can register the router and issue TLS"
-            elif [ "$WAS_RUNNING" = false ]; then
-              echo "Stack was previously stopped — returning it to sleeping state for Sablier"
-              docker compose -f "$CF" stop
-            fi
+            echo "Waiting for container state..."
+            docker compose -f "$CF" ps
 
             docker image prune -f
             echo "✓ Deploy complete"
