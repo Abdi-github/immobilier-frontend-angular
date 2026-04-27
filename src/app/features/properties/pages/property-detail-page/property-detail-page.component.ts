@@ -187,6 +187,11 @@ import { TranslateService } from '@ngx-translate/core';
             </div>
 
             <!-- Published + reference -->
+              @if (locationPrecisionMessage(); as message) {
+                <p class="mb-4 rounded-lg border border-rose-100 bg-rose-50 px-3 py-2 text-sm text-rose-700">
+                  {{ message }}
+                </p>
+              }
             @if (property()!.published_at || property()!.id) {
               <div class="flex items-center gap-4 text-sm text-gray-500 border-t border-gray-100 pt-3">
                 @if (property()!.published_at) {
@@ -338,6 +343,24 @@ export class PropertyDetailPageComponent implements OnInit {
 
     const summary = parts.join(', ');
     return property.canton?.code ? `${summary} (${property.canton.code})` : summary;
+  }
+
+  locationPrecisionMessage(): string | null {
+    const precision = this.property()?.location_precision;
+
+    if (precision === 'postal_code') {
+      return this.translate.instant('properties.map.approximatePostalCode');
+    }
+
+    if (precision === 'city') {
+      return this.translate.instant('properties.map.approximateCity');
+    }
+
+    if (precision === 'canton') {
+      return this.translate.instant('properties.map.approximateCanton');
+    }
+
+    return null;
   }
 
   displayDescription(): string {

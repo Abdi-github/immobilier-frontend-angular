@@ -20,6 +20,14 @@ export type PropertyStatus =
 
 export type TransactionType = 'rent' | 'buy';
 
+export type PropertyLocationPrecision = 'exact' | 'postal_code' | 'city' | 'canton' | 'unknown';
+
+export type PropertyGeocodingSource =
+  | 'manual'
+  | 'provider'
+  | 'city_centroid'
+  | 'canton_centroid';
+
 export type PropertySection = 'residential' | 'commercial' | 'land' | 'parking';
 
 // Multilingual text field — stored as separate fields in MongoDB,
@@ -65,6 +73,8 @@ export interface Canton {
   id: string;
   code: string; // e.g. 'VD', 'GE', 'ZH'
   name: TranslatedField;
+  latitude?: number;
+  longitude?: number;
   is_active: boolean;
 }
 
@@ -75,6 +85,8 @@ export interface City {
   name: TranslatedField;
   postal_code: string;
   image_url?: string;
+  latitude?: number;
+  longitude?: number;
   property_count?: number;
   is_active: boolean;
 }
@@ -154,6 +166,9 @@ export interface Property {
   surface_area?: number;
   latitude?: number;
   longitude?: number;
+  location_precision?: PropertyLocationPrecision;
+  geocoding_source?: PropertyGeocodingSource;
+  geocoded_at?: string;
   address: string;
   postal_code?: string;
   status: PropertyStatus;

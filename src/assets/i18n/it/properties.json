@@ -85,6 +85,14 @@
       "ARCHIVED": "Archiviato"
     }
   },
+  "map": {
+    "redPins": "Le proprietà con coordinate sono contrassegnate in rosso sulla mappa.",
+    "approximateCount_one": "{{count}} indicatore rosso mostra una posizione approssimativa.",
+    "approximateCount_other": "{{count}} indicatori rossi mostrano posizioni approssimative.",
+    "approximatePostalCode": "L'indicatore sulla mappa mostra una posizione approssimativa a livello di codice postale.",
+    "approximateCity": "L'indicatore sulla mappa mostra una posizione approssimativa a livello di città.",
+    "approximateCanton": "L'indicatore sulla mappa mostra una posizione approssimativa a livello di cantone."
+  },
   "contact": {
     "title": "Richiesta informazioni",
     "firstName": "Nome",

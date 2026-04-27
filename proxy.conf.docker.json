@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://immobilier_api_prod:4003",
+    "target": "http://api:4003",
     "secure": false,
     "changeOrigin": true
   }

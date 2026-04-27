@@ -85,6 +85,14 @@
       "ARCHIVED": "Archiviert"
     }
   },
+  "map": {
+    "redPins": "Immobilien mit Koordinaten sind auf der Karte rot markiert.",
+    "approximateCount_one": "{{count}} roter Marker zeigt einen ungefähren Standort.",
+    "approximateCount_other": "{{count}} rote Marker zeigen ungefähre Standorte.",
+    "approximatePostalCode": "Der Kartenmarker zeigt einen ungefähren Standort auf Postleitzahl-Ebene.",
+    "approximateCity": "Der Kartenmarker zeigt einen ungefähren Standort auf Stadtebene.",
+    "approximateCanton": "Der Kartenmarker zeigt einen ungefähren Standort auf Kantonsebene."
+  },
   "contact": {
     "title": "Anfrage senden",
     "firstName": "Vorname",

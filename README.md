@@ -29,7 +29,7 @@ npm install
 npm start
 ```
 
-Open [http://localhost:4200](http://localhost:4200).
+Open [http://localhost:4200](http://localhost:4200) for local `npm start`, or [http://localhost:4203](http://localhost:4203) for the Docker dev container.
 
 ## Available scripts
 

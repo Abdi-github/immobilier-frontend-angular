@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -77,10 +77,20 @@ import { LocalizedFieldPipe } from '@shared/pipes/localized-field.pipe';
             <!-- Location (Canton) -->
             <mat-form-field appearance="outline" class="property-toolbar-field w-44 shrink-0" subscriptSizing="dynamic">
               <mat-label>{{ 'properties.filters.location' | translate }}</mat-label>
-              <mat-select [(ngModel)]="filters.canton_id" (ngModelChange)="applyFilters()">
+              <mat-select [(ngModel)]="filters.canton_id" (ngModelChange)="onCantonChange($event)">
                 <mat-option value="">{{ 'properties.filters.allCantons' | translate }}</mat-option>
                 @for (canton of cantons(); track canton.id) {
                   <mat-option [value]="canton.id">{{ canton.name | localizedField }} ({{ canton.code }})</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="property-toolbar-field w-44 shrink-0" subscriptSizing="dynamic">
+              <mat-label>{{ 'properties.filters.city' | translate }}</mat-label>
+              <mat-select [(ngModel)]="filters.city_id" (ngModelChange)="applyFilters()" [disabled]="!filters.canton_id">
+                <mat-option value="">{{ 'properties.filters.allCities' | translate }}</mat-option>
+                @for (city of cities(); track city.id) {
+                  <mat-option [value]="city.id">{{ city.name | localizedField }}</mat-option>
                 }
               </mat-select>
             </mat-form-field>
@@ -221,7 +231,13 @@ import { LocalizedFieldPipe } from '@shared/pipes/localized-field.pipe';
               <div class="sticky top-24 overflow-hidden rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
                 <div class="mb-4">
                   <h2 class="text-lg font-semibold text-gray-900">
-                    {{ selectedCanton()?.name | localizedField }}
+                    @if (selectedCity(); as city) {
+                      {{ city.name | localizedField }}
+                    } @else if (selectedCanton(); as canton) {
+                      {{ canton.name | localizedField }}
+                    } @else {
+                      {{ 'properties.detail.map' | translate }}
+                    }
                   </h2>
                   <p class="mt-1 text-sm text-gray-500">
                     {{ 'properties.list.countRange' | translate : {
@@ -230,6 +246,14 @@ import { LocalizedFieldPipe } from '@shared/pipes/localized-field.pipe';
                       total: pagination()?.total ?? 0
                     } }}
                   </p>
+                  <p class="mt-2 text-sm text-rose-700">
+                    {{ 'properties.map.redPins' | translate }}
+                  </p>
+                  @if (approximateMarkerCount() > 0) {
+                    <p class="mt-1 text-sm text-rose-700">
+                      {{ approximateCountLabel() }}
+                    </p>
+                  }
                 </div>
 
                 <app-property-map
@@ -252,6 +276,7 @@ export class PropertyListPageComponent implements OnInit {
   private readonly searchStore = inject(SearchStore);
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
+  private readonly translate = inject(TranslateService);
 
   readonly properties = signal<Property[]>([]);
   readonly categories = signal<Category[]>([]);
@@ -297,6 +322,11 @@ export class PropertyListPageComponent implements OnInit {
     // Merge any query params from direct URL navigation
     this.route.queryParams.subscribe((params) => {
       this.filters = { ...this.filters, ...params, page: Number(params['page'] || 1) };
+      if (typeof this.filters.canton_id === 'string' && this.filters.canton_id) {
+        this.propertyService.getCitiesByCanton(this.filters.canton_id).subscribe((cities) => this.cities.set(cities));
+      } else {
+        this.cities.set([]);
+      }
       this.loadProperties();
     });
 
@@ -378,11 +408,34 @@ export class PropertyListPageComponent implements OnInit {
   }
 
   showDesktopMap(): boolean {
-    return Boolean(this.filters.canton_id) && this.mappableProperties().length > 0;
+    return Boolean(this.filters.canton_id || this.filters.city_id) && this.mappableProperties().length > 0;
   }
 
   selectedCanton(): Canton | undefined {
-    return this.cantons().find((canton) => canton.id === this.filters.canton_id);
+    return this.cantons().find((canton) => canton.id === this.filters.canton_id)
+      ?? this.properties().find((property) => property.canton_id === this.filters.canton_id)?.canton;
+  }
+
+  selectedCity(): City | undefined {
+    return this.cities().find((city) => city.id === this.filters.city_id)
+      ?? this.properties().find((property) => property.city_id === this.filters.city_id)?.city;
+  }
+
+  approximateMarkerCount(): number {
+    return this.mappableProperties().filter(
+      (property) => property.location_precision === 'postal_code'
+        || property.location_precision === 'city'
+        || property.location_precision === 'canton',
+    ).length;
+  }
+
+  approximateCountLabel(): string {
+    const count = this.approximateMarkerCount();
+    const key = count === 1
+      ? 'properties.map.approximateCount_one'
+      : 'properties.map.approximateCount_other';
+
+    return this.translate.instant(key, { count });
   }
 
   mapCenter(): { lat: number; lng: number } {
