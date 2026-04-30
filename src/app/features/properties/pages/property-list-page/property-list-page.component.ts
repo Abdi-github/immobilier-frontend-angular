@@ -77,8 +77,7 @@ import { LocalizedFieldPipe } from '@shared/pipes/localized-field.pipe';
             <!-- Location (Canton) -->
             <mat-form-field appearance="outline" class="property-toolbar-field w-44 shrink-0" subscriptSizing="dynamic">
               <mat-label>{{ 'properties.filters.location' | translate }}</mat-label>
-              <mat-select [(ngModel)]="filters.canton_id" (ngModelChange)="onCantonChange($event)">
-                <mat-option value="">{{ 'properties.filters.allCantons' | translate }}</mat-option>
+              <mat-select [(ngModel)]="selectedCantonIdsModel" (ngModelChange)="onCantonChange($event)" multiple>
                 @for (canton of cantons(); track canton.id) {
                   <mat-option [value]="canton.id">{{ canton.name | localizedField }} ({{ canton.code }})</mat-option>
                 }
@@ -87,8 +86,7 @@ import { LocalizedFieldPipe } from '@shared/pipes/localized-field.pipe';
 
             <mat-form-field appearance="outline" class="property-toolbar-field w-44 shrink-0" subscriptSizing="dynamic">
               <mat-label>{{ 'properties.filters.city' | translate }}</mat-label>
-              <mat-select [(ngModel)]="filters.city_id" (ngModelChange)="applyFilters()" [disabled]="!filters.canton_id">
-                <mat-option value="">{{ 'properties.filters.allCities' | translate }}</mat-option>
+              <mat-select [(ngModel)]="selectedCityIdsModel" (ngModelChange)="onCityChange($event)" [disabled]="selectedCantonIds().length === 0" multiple>
                 @for (city of cities(); track city.id) {
                   <mat-option [value]="city.id">{{ city.name | localizedField }}</mat-option>
                 }
@@ -281,6 +279,7 @@ export class PropertyListPageComponent implements OnInit {
   readonly properties = signal<Property[]>([]);
   readonly categories = signal<Category[]>([]);
   readonly cantons = signal<Canton[]>([]);
+  readonly allCities = signal<City[]>([]);
   readonly cities = signal<City[]>([]);
   readonly pagination = signal<Pagination | null>(null);
   readonly loading = signal(true);
@@ -288,6 +287,8 @@ export class PropertyListPageComponent implements OnInit {
   viewMode: 'grid' | 'list' = 'grid';
   priceRange = '';
   surfaceRange = '';
+  selectedCantonIdsModel: string[] = [];
+  selectedCityIdsModel: string[] = [];
 
   readonly priceOptions = [
     { label: '< CHF 500', value: 'max-500' },
@@ -321,17 +322,29 @@ export class PropertyListPageComponent implements OnInit {
   ngOnInit(): void {
     // Merge any query params from direct URL navigation
     this.route.queryParams.subscribe((params) => {
-      this.filters = { ...this.filters, ...params, page: Number(params['page'] || 1) };
-      if (typeof this.filters.canton_id === 'string' && this.filters.canton_id) {
-        this.propertyService.getCitiesByCanton(this.filters.canton_id).subscribe((cities) => this.cities.set(cities));
-      } else {
-        this.cities.set([]);
-      }
+      const cantonIds = this.parseMultiValue(params['canton_id']);
+      const cityIds = this.parseMultiValue(params['city_id']);
+      this.selectedCantonIdsModel = cantonIds;
+      this.selectedCityIdsModel = cityIds;
+
+      this.filters = {
+        ...this.filters,
+        ...params,
+        canton_id: cantonIds.length > 0 ? cantonIds.join(',') : undefined,
+        city_id: cityIds.length > 0 ? cityIds.join(',') : undefined,
+        page: Number(params['page'] || 1),
+      };
+
+      this.updateAvailableCities();
       this.loadProperties();
     });
 
     this.propertyService.getCategories().subscribe((cats) => this.categories.set(cats));
     this.propertyService.getCantons().subscribe((cantons) => this.cantons.set(cantons));
+    this.propertyService.getCities().subscribe((cities) => {
+      this.allCities.set(cities);
+      this.updateAvailableCities();
+    });
   }
 
   loadProperties(): void {
@@ -383,13 +396,16 @@ export class PropertyListPageComponent implements OnInit {
     this.loadProperties();
   }
 
-  onCantonChange(cantonId: string): void {
-    this.filters.city_id = undefined;
-    if (cantonId) {
-      this.propertyService.getCitiesByCanton(cantonId).subscribe((cities) => this.cities.set(cities));
-    } else {
-      this.cities.set([]);
-    }
+  onCantonChange(cantonIds: string[] | string): void {
+    this.selectedCantonIdsModel = this.parseMultiValue(cantonIds);
+    this.updateAvailableCities();
+    this.filters.canton_id = this.selectedCantonIdsModel.length > 0 ? this.selectedCantonIdsModel.join(',') : undefined;
+    this.applyFilters();
+  }
+
+  onCityChange(cityIds: string[] | string): void {
+    this.selectedCityIdsModel = this.parseMultiValue(cityIds);
+    this.filters.city_id = this.selectedCityIdsModel.length > 0 ? this.selectedCityIdsModel.join(',') : undefined;
     this.applyFilters();
   }
 
@@ -402,23 +418,36 @@ export class PropertyListPageComponent implements OnInit {
   resetFilters(): void {
     this.filters = { page: 1, limit: 21, transaction_type: 'rent', sort_by: 'published_at', sort_order: 'desc' };
     this.priceRange = '';
+    this.selectedCantonIdsModel = [];
+    this.selectedCityIdsModel = [];
+    this.cities.set([]);
     this.searchStore.resetFilters();
     this.syncQueryParams();
     this.loadProperties();
   }
 
   showDesktopMap(): boolean {
-    return Boolean(this.filters.canton_id || this.filters.city_id) && this.mappableProperties().length > 0;
+    return (this.selectedCantonIds().length > 0 || this.selectedCityIds().length > 0) && this.mappableProperties().length > 0;
   }
 
   selectedCanton(): Canton | undefined {
-    return this.cantons().find((canton) => canton.id === this.filters.canton_id)
-      ?? this.properties().find((property) => property.canton_id === this.filters.canton_id)?.canton;
+    const selectedId = this.selectedCantonIds()[0];
+    if (!selectedId) {
+      return undefined;
+    }
+
+    return this.cantons().find((canton) => canton.id === selectedId)
+      ?? this.properties().find((property) => property.canton_id === selectedId)?.canton;
   }
 
   selectedCity(): City | undefined {
-    return this.cities().find((city) => city.id === this.filters.city_id)
-      ?? this.properties().find((property) => property.city_id === this.filters.city_id)?.city;
+    const selectedId = this.selectedCityIds()[0];
+    if (!selectedId) {
+      return undefined;
+    }
+
+    return this.cities().find((city) => city.id === selectedId)
+      ?? this.properties().find((property) => property.city_id === selectedId)?.city;
   }
 
   approximateMarkerCount(): number {
@@ -474,6 +503,47 @@ export class PropertyListPageComponent implements OnInit {
     return this.properties().filter(
       (property) => typeof property.latitude === 'number' && typeof property.longitude === 'number',
     );
+  }
+
+  selectedCantonIds(): string[] {
+    return this.selectedCantonIdsModel;
+  }
+
+  selectedCityIds(): string[] {
+    return this.selectedCityIdsModel;
+  }
+
+  private parseMultiValue(value: unknown): string[] {
+    if (Array.isArray(value)) {
+      return value.map((item) => String(item).trim()).filter(Boolean);
+    }
+
+    if (typeof value === 'string') {
+      return value.split(',').map((item) => item.trim()).filter(Boolean);
+    }
+
+    return [];
+  }
+
+  private updateAvailableCities(): void {
+    const selectedCantonIds = this.selectedCantonIds();
+
+    if (selectedCantonIds.length === 0) {
+      this.cities.set([]);
+      this.selectedCityIdsModel = [];
+      this.filters.city_id = undefined;
+      return;
+    }
+
+    const availableCities = this.allCities().filter((city) => selectedCantonIds.includes(city.canton_id));
+    this.cities.set(availableCities);
+
+    const validCityIds = this.selectedCityIdsModel.filter((cityId) =>
+      availableCities.some((city) => city.id === cityId),
+    );
+
+    this.selectedCityIdsModel = validCityIds;
+    this.filters.city_id = validCityIds.length > 0 ? validCityIds.join(',') : undefined;
   }
 
   private syncQueryParams(): void {

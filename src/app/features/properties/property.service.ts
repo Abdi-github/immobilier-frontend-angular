@@ -15,7 +15,13 @@ export class PropertyService {
   private readonly api = inject(ApiService);
 
   getProperties(filters: PropertyFilters): Observable<PropertyListResult> {
-    return this.api.getList<Property>('/public/properties', { ...filters }).pipe(
+    const normalizedFilters = {
+      ...filters,
+      canton_id: Array.isArray(filters.canton_id) ? filters.canton_id.join(',') : filters.canton_id,
+      city_id: Array.isArray(filters.city_id) ? filters.city_id.join(',') : filters.city_id,
+    };
+
+    return this.api.getList<Property>('/public/properties', normalizedFilters).pipe(
       map((res) => ({
         items: res.data ?? [],
         pagination: res.meta,
@@ -39,6 +45,10 @@ export class PropertyService {
 
   getCantons(): Observable<Canton[]> {
     return this.api.getList<Canton>('/public/locations/cantons').pipe(map((res) => res.data ?? []));
+  }
+
+  getCities(): Observable<City[]> {
+    return this.api.getList<City>('/public/locations/cities').pipe(map((res) => res.data ?? []));
   }
 
   getCitiesByCanton(cantonId: string): Observable<City[]> {
