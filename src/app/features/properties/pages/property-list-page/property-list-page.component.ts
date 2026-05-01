@@ -529,9 +529,15 @@ export class PropertyListPageComponent implements OnInit {
     const selectedCantonIds = this.selectedCantonIds();
 
     if (selectedCantonIds.length === 0) {
-      this.cities.set([]);
-      this.selectedCityIdsModel = [];
-      this.filters.city_id = undefined;
+      if (this.selectedCityIdsModel.length > 0) {
+        this.cities.set(
+          this.allCities().filter((city) => this.selectedCityIdsModel.includes(city.id)),
+        );
+        this.filters.city_id = this.selectedCityIdsModel.join(',');
+      } else {
+        this.cities.set([]);
+        this.filters.city_id = undefined;
+      }
       return;
     }
 
