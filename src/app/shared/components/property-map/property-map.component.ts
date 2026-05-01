@@ -74,7 +74,9 @@ export class PropertyMapComponent implements AfterViewInit, OnDestroy {
 
   private async initMap(): Promise<void> {
     // Lazy-load leaflet — reduces initial bundle size
-    const L = await import('leaflet');
+    const leafletModule = await import('leaflet');
+    const L = ((leafletModule as unknown) as { default?: typeof leafletModule }).default
+      ?? leafletModule;
     this.leaflet = L;
 
     this.map = L.map(this.mapContainer.nativeElement).setView([this.lat, this.lng], this.zoom);
